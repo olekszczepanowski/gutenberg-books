@@ -106,6 +106,12 @@ function BooksDisplayer() {
          setFavorites([...favorites, book]);
      }
   }
+  function sanitizeUrl(url) {
+    if (url && url.startsWith('http://')) {
+       return url.replace('http://', 'https://');
+    }
+    return url;
+ }
 
    return (
       <>
@@ -151,7 +157,7 @@ function BooksDisplayer() {
                   <div id="content-div" key={`content-${index}`}>
                {expandedBook === index && (
                   <iframe className="book-content" 
-                     src={book.formats["text/html"]} ></iframe>
+                     src={sanitizeUrl(book.formats["text/html"])} ></iframe>
                )}
             </div>
                </li>

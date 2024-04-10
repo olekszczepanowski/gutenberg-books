@@ -168,7 +168,7 @@ function BooksDisplayer() {
                   <div id="content-div" key={`content-${index}`}>
                {expandedBook === index && (
                   <iframe className="book-content" 
-                     src={"https://"+(book.formats["text/html"]).slice(8)} ></iframe>
+                     src={book.formats["text/plain; charset=us-ascii"]} ></iframe>
                )}
             </div>
                </li>

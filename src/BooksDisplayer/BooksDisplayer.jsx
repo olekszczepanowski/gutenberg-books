@@ -15,13 +15,24 @@ function BooksDisplayer() {
       fetch("https://gutendex.com/books")
          .then(response => response.json())
          .then(data => {
-            setRecords(data.results);
-            setIsLoading(false);
-         })
-         .catch(error => {
-            console.error(error);
-            setIsLoading(false);
-         });
+            const modifiedData = data.results.map(book => {
+                const modifiedFormats = {};
+                for (const key in book.formats) {
+                   if (book.formats[key].startsWith("http://")) {
+                      modifiedFormats[key] = book.formats[key].replace("http://", "https://");
+                   } else {
+                      modifiedFormats[key] = book.formats[key];
+                   }
+                }
+                return { ...book, formats: modifiedFormats };
+             });
+             setRecords(modifiedData);
+             setIsLoading(false);
+          })
+          .catch(error => {
+             console.error(error);
+             setIsLoading(false);
+          });
    }, [])
 
    useEffect(() => {
@@ -54,6 +65,8 @@ function BooksDisplayer() {
  
      return filteredBooks;
    }
+
+   console.log(records);
 
    function filterByName(records, name){
       const nameToLowerCase = name.toLowerCase();
@@ -106,12 +119,9 @@ function BooksDisplayer() {
          setFavorites([...favorites, book]);
      }
   }
-  function sanitizeUrl(url) {
-    if (url && url.startsWith('http://')) {
-       return url.replace('http://', 'https://');
-    }
-    return url;
- }
+//   function sanitizeUrl(url) {
+//        return url.replace('http://', 'https://'); 
+//  }
 
    return (
       <>
@@ -157,7 +167,7 @@ function BooksDisplayer() {
                   <div id="content-div" key={`content-${index}`}>
                {expandedBook === index && (
                   <iframe className="book-content" 
-                     src={sanitizeUrl(book.formats["text/html"])} ></iframe>
+                     src={book.formats["text/html"]} ></iframe>
                )}
             </div>
                </li>

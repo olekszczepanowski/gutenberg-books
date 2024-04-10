@@ -82,6 +82,7 @@ function BooksDisplayer() {
       setName(event.target.value);
    }
 
+   console.log(records);
 
    function displayAuthors(authors){
       let output = ``;
@@ -167,7 +168,7 @@ function BooksDisplayer() {
                   <div id="content-div" key={`content-${index}`}>
                {expandedBook === index && (
                   <iframe className="book-content" 
-                     src={book.formats["text/html"]} ></iframe>
+                     src={"https://"+(book.formats["text/html"]).slice(8)} ></iframe>
                )}
             </div>
                </li>

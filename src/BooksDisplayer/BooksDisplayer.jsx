@@ -120,9 +120,9 @@ function BooksDisplayer() {
          setFavorites([...favorites, book]);
      }
   }
-//   function sanitizeUrl(url) {
-//        return url.replace('http://', 'https://'); 
-//  }
+  function createBookUrl(bookId) {
+    return `https://www.gutenberg.org/cache/epub/${bookId}/pg${bookId}-images.html`;
+ }
 
    return (
       <>
@@ -168,7 +168,7 @@ function BooksDisplayer() {
                   <div id="content-div" key={`content-${index}`}>
                {expandedBook === index && (
                   <iframe className="book-content" 
-                     src="https://www.gutenberg.org/cache/epub/84/pg84-images.html" ></iframe>
+                     src={createBookUrl(book.id)} ></iframe>
                )}
             </div>
                </li>

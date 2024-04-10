@@ -168,7 +168,7 @@ function BooksDisplayer() {
                   <div id="content-div" key={`content-${index}`}>
                {expandedBook === index && (
                   <iframe className="book-content" 
-                     src={book.formats["text/plain; charset=us-ascii"]} ></iframe>
+                     src="https://www.gutenberg.org/cache/epub/84/pg84-images.html" ></iframe>
                )}
             </div>
                </li>

@@ -5,13 +5,14 @@ A website where you can read books whose copyrights have expired!
 This project was created as a recruitment assignment for Solvro.
 
 You can read books, filter them by categories and add your favorites to favorites list.
+## Created with:
+
+**React JS, CSS, HTML, API: https://gutendex.com/**
 
 ## Demo
 https://olekszczepanowski.github.io/gutenberg-books/
 
-
 ![Demo image](image.png)
-
 
 ## Installation
 

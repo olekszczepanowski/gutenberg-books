@@ -10,6 +10,8 @@ function BooksDisplayer() {
    const [name, setName] = useState("");
    const [isLoading, setIsLoading] = useState(true);
 
+
+   // Fetching data from API
    useEffect(() => {
       setIsLoading(true);
       fetch("https://gutendex.com/books")
@@ -35,6 +37,7 @@ function BooksDisplayer() {
           });
    }, [])
 
+   //Filtering books by categories/name
    useEffect(() => {
       const filteredBooks = filterByCategories(records, category);
       setFilteredBooks(filteredBooks);
@@ -66,7 +69,6 @@ function BooksDisplayer() {
      return filteredBooks;
    }
 
-   console.log(records);
 
    function filterByName(records, name){
       const nameToLowerCase = name.toLowerCase();
@@ -82,8 +84,8 @@ function BooksDisplayer() {
       setName(event.target.value);
    }
 
-   console.log(records);
 
+   //Displaying author/authors
    function displayAuthors(authors){
       let output = ``;
       
@@ -107,7 +109,9 @@ function BooksDisplayer() {
       }
       return output;
    }
-   
+
+
+   //function to enable user to read specific book
    function toggleExpand(bookIndex) {
       setExpandedBook(expandedBook === bookIndex ? null : bookIndex);
    }
@@ -119,6 +123,8 @@ function BooksDisplayer() {
      } else {
          setFavorites([...favorites, book]);
      }
+
+   //function to createBookUrl, because API's urls are causing HTTP errors
   }
   function createBookUrl(bookId) {
     return `https://www.gutenberg.org/cache/epub/${bookId}/pg${bookId}-images.html`;
@@ -140,7 +146,7 @@ function BooksDisplayer() {
         </div>
     </div>
     {isLoading && <div id="loading-div">Loading...</div>}
-      
+      {/* displaying books on page */}
       <div className="books-displayer">
          <ul id="books-list">
             

@@ -8,7 +8,11 @@ You can read books, filter them by categories and add your favorites to favorite
 
 ## Demo
 https://olekszczepanowski.github.io/gutenberg-books/
+
+
 ![Demo image](image.png)
+
+
 ## Installation
 
 ```bash

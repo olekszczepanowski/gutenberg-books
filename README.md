@@ -1,3 +1,5 @@
+[![CI](https://github.com/olekszczepanowski/gutenberg-books/actions/workflows/ci.yaml/badge.svg)](https://github.com/olekszczepanowski/gutenberg-books/actions/workflows/ci.yaml)
+
 # Online library with books from Project Gutenberg 📖📔
 ## Description
 A website where you can read books whose copyrights have expired!

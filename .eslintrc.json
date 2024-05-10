@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "extends": [
+    "@alergeek-ventures/eslint-config/typescript",
+    "@alergeek-ventures/eslint-config/react"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "root": true,
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "simple-import-sort/imports": "off",
+    "simple-import-sort/exports": "off"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["public/legacy/assets/*"],
+      "@public/*": ["public/*"],
+      "@/*": ["src/*"]
+    },
+    "target": "es2016",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "noUncheckedIndexedAccess": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "module": "esnext"
+  },
+  "include": [
+    "src/**.tsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/env.mjs",
+    "next-env.d.ts",
+    "vite.config.js",
+    ".eslintrc.js",
+    "next.config.js"
+  ],
+  "exclude": ["node_modules"]
+}

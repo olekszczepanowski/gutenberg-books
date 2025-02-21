@@ -1,9 +1,0 @@
-h1 {
-  text-align: center;
-  color: green;
-}
-@media (max-width: 500px) {
-  h1 {
-    font-size: 20px;
-  }
-}
